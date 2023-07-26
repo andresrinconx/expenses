@@ -18,13 +18,13 @@ import IconoSalud from '../img/icono_salud.svg'
 import IconoSuscripciones from '../img/icono_suscripciones.svg'
 
 const diccionarioIconos = {
-  ahorro: IconoAhorro,
-  comida: IconoComida,
-  casa: IconoCasa,
-  gastos: IconoGastos,
-  ocio: IconoOcio,
-  salud: IconoSalud,
-  suscripciones: IconoSuscripciones,
+  saving: IconoAhorro,
+  food: IconoComida,
+  home: IconoCasa,
+  expenses: IconoGastos,
+  leisure: IconoOcio,
+  health: IconoSalud,
+  suscriptions: IconoSuscripciones,
 }
 
 const Gasto = ({gasto, setGastoEditar, eliminarGasto}) => {
@@ -57,13 +57,13 @@ const Gasto = ({gasto, setGastoEditar, eliminarGasto}) => {
       >
         <div className='gasto sombra'>
           <div className='contenido-gasto'>
-            <img src={diccionarioIconos[categoria]} alt='img categoria' />
+            <img src={diccionarioIconos[categoria]} alt='img category' />
 
             <div className='descripcion-gasto'>
               <p className='categoria'>{categoria}</p>
               <p className='nombre-gasto'>{nombre}</p>
               <p className='fecha-gasto'>
-                Agregado el: {''}
+                Added on: {''}
                 <span>{formatearFecha(fecha)}</span>
               </p>
             </div>

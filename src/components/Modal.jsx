@@ -23,7 +23,7 @@ const Modal = ({setModal, animarModal, setAnimarModal, mensaje, setMensaje, guar
     e.preventDefault()
 
     if([nombre, cantidad, categoria].includes('')) {
-      setMensaje('Todos los campos son obligatorios')
+      setMensaje('All fields are required')
 
       setTimeout(() => {
         setMensaje('')
@@ -43,18 +43,18 @@ const Modal = ({setModal, animarModal, setAnimarModal, mensaje, setMensaje, guar
   return (
     <div className='modal'>
       <div className='cerrar-modal'>
-        <img src={CerrarBtn} alt='cerrar modal' onClick={ocultarModal} />
+        <img src={CerrarBtn} alt='close modal' onClick={ocultarModal} />
       </div>
 
       <form className={`formulario ${animarModal ? 'animar' : 'cerrar'}`}>
-        <legend>{gastoEditar.nombre ? 'Editar Gasto' : 'Nuevo Gasto'}</legend>
+        <legend>{gastoEditar.nombre ? 'Edit Expense' : 'New Expense'}</legend>
         {mensaje && <Mensaje tipo='error'>{mensaje}</Mensaje>}
 
         <div className='campo'>
-          <label htmlFor='nombre'>Nombre</label>
+          <label htmlFor='nombre'>Name</label>
           <input
             id='nombre'
-            placeholder='Nombre del Gasto'
+            placeholder='Expense Name.'
             type='text'
             value={nombre}
             onChange={e => setNombre(e.target.value)}
@@ -62,10 +62,10 @@ const Modal = ({setModal, animarModal, setAnimarModal, mensaje, setMensaje, guar
         </div>
 
         <div className='campo'>
-          <label htmlFor='cantidad'>Cantidad</label>
+          <label htmlFor='cantidad'>Amount</label>
           <input
             id='cantidad'
-            placeholder='Cantidad del Gasto. ej. 300'
+            placeholder='Amount of the expense'
             type='text'
             value={cantidad}
             onChange={e => setCantidad(e.target.value)}
@@ -73,27 +73,27 @@ const Modal = ({setModal, animarModal, setAnimarModal, mensaje, setMensaje, guar
         </div>
 
         <div className='campo'>
-          <label htmlFor='categoria'>Categoria</label>
+          <label htmlFor='categoria'>Category</label>
           <select 
             id='categoria'
             value={categoria}
             onChange={e => setCategoria(e.target.value)}
           >
-            <option disabled value=''>-- Seleccione --</option>
-            <option value='ahorro'>Ahorro</option>
-            <option value='comida'>Comida</option>
-            <option value='casa'>Casa</option>
-            <option value='gastos'>Gastos Varios</option>
-            <option value='ocio'>Ocio</option>
-            <option value='salud'>Salud</option>
-            <option value='suscripciones'>Suscripciones</option>
+            <option disabled value=''>-- Select --</option>
+            <option value='saving'>Saving</option>
+            <option value='food'>Food</option>
+            <option value='home'>Home</option>
+            <option value='expenses'>Miscellaneous Expenses</option>
+            <option value='leisure'>Leisure</option>
+            <option value='health'>Health</option>
+            <option value='suscriptions'>Suscriptions</option>
           </select>
         </div>
 
         <input
           type='submit'
           onClick={handleSubmit}
-          value={gastoEditar.nombre ? 'Editar Gasto' : 'Guardar Gasto'}
+          value={gastoEditar.nombre ? 'Edit Expense' : 'Save Expense'}
         />
 
       </form>

@@ -7,7 +7,7 @@ const ListadoGastos = ({gastos, setGastoEditar, eliminarGasto, filtro, gastosFil
       {filtro
         ? (
           <>
-            <h2>{gastosFiltrados.length ? 'Gastos' : 'No Hay Gastos en esta categoria' }</h2>
+            <h2>{gastosFiltrados.length ? 'Expenses' : 'There are no expenses in this category' }</h2>
             {gastosFiltrados.map((gasto) => {
               return (
                 <Gasto
@@ -20,7 +20,7 @@ const ListadoGastos = ({gastos, setGastoEditar, eliminarGasto, filtro, gastosFil
           </>
         ) : (
           <>
-            <h2>{gastos.length ? 'Gastos' : 'No Hay Gastos' }</h2>
+            <h2>{gastos.length ? 'Expenses' : 'There are no expenses' }</h2>
             {gastos.map((gasto) => {
               return (
                 <Gasto

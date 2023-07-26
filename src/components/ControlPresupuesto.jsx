@@ -46,7 +46,7 @@ const ControlPresupuesto = ({presupuesto, gastos, setGastos, setPresupuesto, set
             textColor: porcentaje > 100 ? '#dc2626' : '#3b82f6',
           })}
           value={porcentaje}
-          text={`${porcentaje}% Gastado`}
+          text={`${porcentaje}% Spent`}
         />
       </div>
       <div className='contenido-presupuesto'>
@@ -54,16 +54,16 @@ const ControlPresupuesto = ({presupuesto, gastos, setGastos, setPresupuesto, set
           type='button'
           onClick={() => handleResetApp()}
         >
-          Resetear App
+          Reset App
         </button>
         <p>
-          <span>Presupuesto:</span>{' '}{formatearCantidad(presupuesto)}
+          <span>Budget:</span>{' '}{formatearCantidad(presupuesto)}
         </p>
         <p className={`${disponible < 0 ? 'negativo' : ''}`}>
-          <span>Disponible:</span>{' '}{formatearCantidad(disponible)}
+          <span>Available:</span>{' '}{formatearCantidad(disponible)}
         </p>
         <p>
-          <span>Gastado:</span>{' '}{formatearCantidad(gastado)}
+          <span>Spent:</span>{' '}{formatearCantidad(gastado)}
         </p>
       </div>
     </div>
